@@ -1,4 +1,5 @@
-import tensorflow.keras.backend as K
+import tensorflow as tf
+import tf.keras.backend as K
 from utils import action_map, flatten_1d_b, perc_solved_cube
 import numpy as np
 from autodidactic_decode_p import get_model
