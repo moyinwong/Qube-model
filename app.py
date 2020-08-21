@@ -5,9 +5,10 @@ from solve import solve, turn
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def run():
-    return "Hello World!"
+    return "<h1 style='color:blue'>Hello There!</h1>"
 
 @app.route("/solve",methods=['POST'])
 def predict():
