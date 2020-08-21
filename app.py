@@ -17,3 +17,7 @@ def predict():
     results = [is_solved, actions]
 
     return json.dumps(results)
+
+if __name__ == "__main__":
+    app.run()
+
