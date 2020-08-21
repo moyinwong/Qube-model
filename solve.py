@@ -78,14 +78,74 @@ def solve(Cube):
 
     return success, action_list
 
-def turn(json):
+def turn(content):
     new_cubies = set()
-    print(json)
+    #print(content)
+
+    #Create cubies for copy cude
+
+
+    for faces in content:
+        #print(faces)
+        #print(content[faces])
+        new_dict = {}
+        for i in range(len(faces)):
+            #print(faces[i])
+            new_dict[faces[i]] = pc.Square(content[faces][faces[i]])
+        print(new_dict)
+        if len(new_dict) == 1:
+            new_cubies.add(pc.cube.Centre(**new_dict))
+        elif len(new_dict) == 2:
+            new_cubies.add(pc.cube.Edge(**new_dict))
+        elif len(new_dict) == 3:
+            new_cubies.add(pc.cube.Corner(**new_dict))
+        else:
+            return "invalid input"
+
+    new_cube = pc.Cube(new_cubies)
+    print([new_cube])
+    return new_cube
+
+    #"L", "R", "U", "D", "F", "B"
+
+    # cubies.add(pc.cube.Centre(**{"L": pc.Square("red")}))
+    # cubies.add(pc.cube.Centre(**{"R": pc.Square("orange")}))
+    # cubies.add(pc.cube.Centre(**{"U": pc.Square("yellow")}))
+    # cubies.add(pc.cube.Centre(**{"D": pc.Square("white")}))
+    # cubies.add(pc.cube.Centre(**{"F": pc.Square("green")}))
+    # cubies.add(pc.cube.Centre(**{"B": pc.Square("blue")}))
+
+    #"LB", "LF", "LU", "LD", "DB", "DF", "UB", "UF", "RB", "RF", "RU", "RD"
+
+    # cubies.add(pc.cube.Edge(**{"L": pc.Square("red"),"B": pc.Square("blue")}))
+    # cubies.add(pc.cube.Edge(**{"L": pc.Square("red"),"F": pc.Square("green")}))
+    # cubies.add(pc.cube.Edge(**{"L": pc.Square("red"),"U": pc.Square("yellow")}))
+    # cubies.add(pc.cube.Edge(**{"L": pc.Square("red"),"D": pc.Square("white")}))
+    # cubies.add(pc.cube.Edge(**{"D": pc.Square("white"),"B": pc.Square("blue")}))
+    # cubies.add(pc.cube.Edge(**{"D": pc.Square("white"),"F": pc.Square("green")}))
+    # cubies.add(pc.cube.Edge(**{"U": pc.Square("yellow"),"B": pc.Square("blue")}))
+    # cubies.add(pc.cube.Edge(**{"U": pc.Square("yellow"),"F": pc.Square("green")}))
+    # cubies.add(pc.cube.Edge(**{"R": pc.Square("orange"),"B": pc.Square("yellow")}))
+    # cubies.add(pc.cube.Edge(**{"R": pc.Square("orange"),"F": pc.Square("white")}))
+    # cubies.add(pc.cube.Edge(**{"R": pc.Square("orange"),"U": pc.Square("green")}))
+    # cubies.add(pc.cube.Edge(**{"R": pc.Square("orange"),"D": pc.Square("blue")}))
+
+    #"LDB", "LDF", "LUB", "LUF", "RDB", "RDF", "RUB", "RUF"
+
+    # cubies.add(pc.cube.Corner(**{"L": pc.Square("red"),"D": pc.Square("white"),"B": pc.Square("blue")}))
+    # cubies.add(pc.cube.Corner(**{"L": pc.Square("red"),"D": pc.Square("white"),"F": pc.Square("green")}))
+    # cubies.add(pc.cube.Corner(**{"L": pc.Square("red"),"U": pc.Square("yellow"),"B": pc.Square("blue")}))
+    # cubies.add(pc.cube.Corner(**{"L": pc.Square("red"),"U": pc.Square("yellow"),"F": pc.Square("green")}))
+    # cubies.add(pc.cube.Corner(**{"R": pc.Square("orange"),"D": pc.Square("blue"),"B": pc.Square("yellow")}))
+    # cubies.add(pc.cube.Corner(**{"R": pc.Square("orange"),"D": pc.Square("blue"),"F": pc.Square("white")}))
+    # cubies.add(pc.cube.Corner(**{"R": pc.Square("orange"),"U": pc.Square("green"),"B": pc.Square("yellow")}))
+    # cubies.add(pc.cube.Corner(**{"R": pc.Square("orange"),"U": pc.Square("green"),"F": pc.Square("white")}))
 
 
     #create cubies from input
 
 
-    new_cube = pc.Cube(new_cubies)
-    return new_cube
+    # new_cube = pc.Cube(new_cubies)
+    # print([new_cube])
+    # return new_cube
 
