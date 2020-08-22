@@ -11,9 +11,9 @@ app = Flask(__name__)
 def run():
     return "<h1 style='color:blue'>Hello There!</h1>"
 
-@app.route("/solve")
-def run():
-    return "<h1 style='color:blue'>Hello There!</h1>"
+# @app.route("/solve")
+# def run():
+#     return "<h1 style='color:blue'>Hello There!</h1>"
 
 
 @app.route("/solve",methods=['POST'])
