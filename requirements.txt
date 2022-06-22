@@ -1,4 +1,4 @@
-numpy==1.16.4
+numpy==1.22.0
 tqdm==4.23.2
 pycuber==0.2.2
 tensorflow==2.3.0
